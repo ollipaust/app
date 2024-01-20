@@ -1,9 +1,22 @@
-node_modules
-
-/.cache
-/public/build
-/build
+# Environment files
 .env
 
-# Local Netlify folder
+# Dependency folders
+node_modules
+
+# Build artifacts
+/build
+/public/build
+
+# Netlify specifics
 .netlify
+/public/_redirects
+
+# Cache files
+/.cache
+
+# Application-specific Sass files
+/app/ui/sass/*.css
+/app/ui/sass/*.css.map
+/app/ui/sass/helpers/*.css
+/app/ui/sass/helpers/*.css.map

@@ -1,33 +1,45 @@
 {
-  "name": "netlify",
-  "private": true,
-  "sideEffects": false,
-  "type": "module",
-  "scripts": {
-    "build": "remix build",
-    "dev": "remix dev",
-    "start": "netlify serve",
-    "typecheck": "tsc -b"
-  },
-  "dependencies": {
-    "@netlify/functions": "^2.0.0",
-    "@netlify/remix-adapter": "^2.0.0",
-    "@remix-run/node": "^2.5.1",
-    "@remix-run/react": "^2.5.1",
-    "cross-env": "^7.0.3",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@remix-run/dev": "^2.5.1",
-    "@remix-run/eslint-config": "^2.5.1",
-    "@remix-run/serve": "^2.5.1",
-    "@types/react": "^18.2.0",
-    "@types/react-dom": "^18.2.0",
-    "eslint": "^8.27.0",
-    "typescript": "^5.2.2"
-  },
-  "engines": {
-    "node": ">=18"
-  }
+	"name": "netlify",
+	"private": true,
+	"sideEffects": false,
+	"type": "module",
+	"scripts": {
+		"build": "remix build",
+		"dev": "remix dev",
+		"format": "prettier --write .",
+		"start": "netlify serve",
+		"lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+		"typecheck": "tsc -b"
+	},
+	"dependencies": {
+		"@netlify/functions": "^2.4.1",
+		"@netlify/remix-adapter": "^2.2.0",
+		"@remix-run/node": "^2.5.1",
+		"@remix-run/react": "^2.5.1",
+		"cross-env": "^7.0.3",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0"
+	},
+	"devDependencies": {
+		"@remix-run/dev": "^2.5.1",
+		"@remix-run/eslint-config": "^2.5.1",
+		"@remix-run/serve": "^2.5.1",
+		"@types/parse-cache-control": "^1.0.4",
+		"@types/react": "^18.2.0",
+		"@types/react-dom": "^18.2.0",
+		"@typescript-eslint/eslint-plugin": "^6.19.0",
+		"@typescript-eslint/parser": "^6.19.0",
+		"eslint": "^8.56.0",
+		"eslint-config-prettier": "^9.0.0",
+		"eslint-plugin-import": "^2.28.1",
+		"eslint-plugin-jsx-a11y": "^6.7.1",
+		"eslint-plugin-react": "^7.33.2",
+		"eslint-plugin-react-hooks": "^4.6.0",
+		"parse-cache-control": "^1.0.1",
+		"prettier": "^3.2.4",
+		"typescript": "^5.2.2"
+	},
+	"engines": {
+		"node": ">=18"
+	}
 }
