@@ -1,8 +1,9 @@
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
-import { responseHeaders } from "~/utils/responseHeaders";
+import { responseHeaders } from "./utils/responseHeaders";
 import Layout from "~/ui/template/layout";
 import baseStylesheet from "~/ui/styles/base.css";
+import siteConfig from "./siteConfig";
 
 // HTTP Headers
 export const headers = responseHeaders;
@@ -35,6 +36,28 @@ export default function App() {
 					name="viewport"
 					content="width=device-width, initial-scale=1"
 				/>
+				<meta 	
+					name="robots" 
+					content="index, follow" />
+				<meta
+					name="theme-color"
+					content={siteConfig.themeColor}
+				/>
+				<meta
+					property="og:url"
+					content={siteConfig.siteUrl}
+				/>
+				<meta
+					property="og:title"
+					content={siteConfig.siteName}
+				/>
+				<meta
+					property="og:description"
+					content={siteConfig.siteDescription}
+				/>
+				<meta 
+					property="og:image" 
+					content={siteConfig.ogImageUrl}></meta>
 				<Meta />
 				<Links />
 			</head>
