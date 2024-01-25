@@ -45,6 +45,9 @@ export const headers: HeadersFunction = ({ loaderHeaders, parentHeaders }) => {
         "Permissions-Policy": "geolocation=(self), microphone=()",
         "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
         "X-Content-Type-Options": "nosniff",
+		"Cross-Origin-Embedder-Policy": "require-corp",
+        "Cross-Origin-Opener-Policy": "same-origin",
+        "Cross-Origin-Resource-Policy": "same-site",
     };
 };
 
