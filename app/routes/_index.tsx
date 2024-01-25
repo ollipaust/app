@@ -1,5 +1,7 @@
-import type { HeadersFunction } from "@remix-run/node";
+import type { HeadersFunction, MetaFunction } from "@remix-run/node";
 import parseCacheControl from "parse-cache-control";
+
+import siteConfig from '~/siteConfig';
 
 export const headers: HeadersFunction = ({ loaderHeaders, parentHeaders }) => {
 	const defaultMaxAge = 31560000;
@@ -18,6 +20,10 @@ export const headers: HeadersFunction = ({ loaderHeaders, parentHeaders }) => {
 	return {
 		"Cache-Control": `max-age=${maxAge}, s-maxage=${maxAge * 12}`,
 	};
+};
+
+export const meta: MetaFunction = () => {
+	return [{ title: siteConfig.siteName }, { name: "description", content: siteConfig.siteDescription }];
 };
 
 export default function Index() {
