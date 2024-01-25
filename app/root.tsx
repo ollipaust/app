@@ -3,7 +3,7 @@ import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@re
 
 import Layout from "~/ui/template/layout";
 
-import baseStylesheet from '~/ui/styles/base.css'
+import baseStylesheet from "~/ui/styles/base.css";
 
 export const links: LinksFunction = () => {
 	return [
@@ -19,7 +19,6 @@ export const links: LinksFunction = () => {
 			rel: "stylesheet",
 			href: baseStylesheet,
 		},
-		
 	];
 };
 

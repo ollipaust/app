@@ -28,10 +28,11 @@ module.exports = {
 		quotes: ["error", "double"],
 		semi: ["error", "always"],
 		"react/react-in-jsx-scope": "off",
+		"react/prop-types": "off",
 	},
 	settings: {
 		react: {
-			version: "detect", // Automatically detect the react version
+			version: "detect",
 		},
 	},
 };

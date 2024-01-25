@@ -4,10 +4,8 @@
 	"sideEffects": false,
 	"type": "module",
 	"scripts": {
-		"build:sass": "sass app/ui/sass/",
-		"build": "npm run build:sass && remix build",
+		"build": "remix build",
 		"dev": "npm run dev-remix",
-		"dev:sass": "sass --watch app/:app/",
 		"dev-remix": "remix dev --manual",
 		"format": "prettier --write .",
 		"start": "netlify serve",

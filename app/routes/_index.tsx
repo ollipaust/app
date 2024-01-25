@@ -1,7 +1,7 @@
 import type { HeadersFunction, MetaFunction } from "@remix-run/node";
 import parseCacheControl from "parse-cache-control";
 
-import siteConfig from '~/siteConfig';
+import siteConfig from "~/siteConfig";
 
 export const headers: HeadersFunction = ({ loaderHeaders, parentHeaders }) => {
 	const defaultMaxAge = 31560000;

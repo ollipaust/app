@@ -7,9 +7,10 @@ interface ContentProps {
 const Content: React.FC<ContentProps> = ({ children }) => {
 	return (
 		<>
-			<main 
+			<main
 				id="MainContent"
-				className="main-content">
+				className="main-content"
+			>
 				{children}
 			</main>
 		</>
