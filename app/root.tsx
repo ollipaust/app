@@ -39,7 +39,7 @@ export const headers: HeadersFunction = ({ loaderHeaders, parentHeaders }) => {
 
     return {
         "Cache-Control": `max-age=${maxAge}, s-maxage=${maxAge * 12}`,
-        "Content-Security-Policy": "default-src 'self'; script-src 'self' 'unsafe-inline'; object-src 'none'; frame-ancestors 'self'; base-uri 'self';",
+        "Content-Security-Policy": "default-src 'self'; script-src 'self'; object-src 'none'; frame-ancestors 'self'; base-uri 'self';",
         "X-Frame-Options": "SAMEORIGIN",
         "Referrer-Policy": "strict-origin-when-cross-origin",
         "Permissions-Policy": "geolocation=(self), microphone=()",
