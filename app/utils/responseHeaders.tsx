@@ -18,12 +18,13 @@ export const responseHeaders: HeadersFunction = ({ loaderHeaders, parentHeaders 
     return {
         "Cache-Control": `max-age=${maxAge}, s-maxage=${maxAge * 12}`,
         "Content-Security-Policy": "default-src 'self'; script-src 'self'; style-src 'self' https://cdnjs.cloudflare.com; object-src 'none'; frame-ancestors 'self'; base-uri 'self';",
+        "Content-Type": "text/html; charset=UTF-8", // Added header for UTF-8 support
         "X-Frame-Options": "SAMEORIGIN",
         "Referrer-Policy": "strict-origin-when-cross-origin",
         "Permissions-Policy": "geolocation=(self), microphone=()",
         "Strict-Transport-Security": "max-age=31536000; includeSubDomains; preload",
         "X-Content-Type-Options": "nosniff",
-		"Cross-Origin-Embedder-Policy": "require-corp",
+        "Cross-Origin-Embedder-Policy": "require-corp",
         "Cross-Origin-Opener-Policy": "same-origin",
         "Cross-Origin-Resource-Policy": "same-site",
     };
