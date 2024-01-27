@@ -2,7 +2,7 @@ import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@re
 import type { LinksFunction } from "@remix-run/node";
 import { responseHeaders } from "./utils/responseHeaders";
 import Layout from "~/ui/template/layout";
-import baseStylesheet from "~/ui/styles/base.css";
+import tailwindStylesheet from "~/ui/styles/tailwind.css";
 import siteConfig from "./siteConfig";
 
 // HTTP Headers
@@ -13,15 +13,11 @@ export const links: LinksFunction = () => {
 	return [
 		{
 			rel: "stylesheet",
-			href: "https://cdnjs.cloudflare.com/ajax/libs/modern-normalize/2.0.0/modern-normalize.min.css",
+			href: tailwindStylesheet,
 		},
 		{
 			rel: "stylesheet",
 			href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
-		},
-		{
-			rel: "stylesheet",
-			href: baseStylesheet,
 		},
 	];
 };
@@ -36,9 +32,10 @@ export default function App() {
 					name="viewport"
 					content="width=device-width, initial-scale=1"
 				/>
-				<meta 	
-					name="robots" 
-					content="index, follow" />
+				<meta
+					name="robots"
+					content="index, follow"
+				/>
 				<meta
 					name="theme-color"
 					content={siteConfig.themeColor}
@@ -55,9 +52,10 @@ export default function App() {
 					property="og:description"
 					content={siteConfig.siteDescription}
 				/>
-				<meta 
-					property="og:image" 
-					content={siteConfig.ogImageUrl}></meta>
+				<meta
+					property="og:image"
+					content={siteConfig.ogImageUrl}
+				></meta>
 				<Meta />
 				<Links />
 			</head>

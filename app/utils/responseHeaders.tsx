@@ -18,7 +18,7 @@ export const responseHeaders: HeadersFunction = ({ loaderHeaders, parentHeaders 
 	return {
 		"Cache-Control": `max-age=${maxAge}, s-maxage=${maxAge * 12}`,
 		"Content-Security-Policy":
-			"default-src 'self'; script-src 'self'; style-src 'self' https://cdnjs.cloudflare.com; object-src 'none'; frame-ancestors 'self'; base-uri 'self';",
+			"default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' https://cdnjs.cloudflare.com; object-src 'none'; frame-ancestors 'self'; base-uri 'self'; connect-src 'self' ws://localhost:3001;",
 		"Content-Type": "text/html; charset=UTF-8",
 		"Content-Encoding": "none",
 		"X-Frame-Options": "SAMEORIGIN",

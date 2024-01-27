@@ -1,0 +1,4 @@
+# Prettier Ignore File
+
+# Ignore specific Tailwind CSS file
+app/ui/styles/tailwind.css

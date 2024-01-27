@@ -1,5 +1,3 @@
-import React from "react";
-
 interface ContentProps {
 	children: React.ReactNode;
 }
@@ -9,9 +7,9 @@ const Content: React.FC<ContentProps> = ({ children }) => {
 		<>
 			<main
 				id="MainContent"
-				className="main-content"
+				className="flex-grow p-8 bg-slate-200"
 			>
-				{children}
+				<div className="container mx-auto bg-white shadow-lg rounded px-6 py-8">{children}</div>
 			</main>
 		</>
 	);
