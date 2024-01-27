@@ -14,3 +14,7 @@ node_modules
 
 # Cache files
 /.cache
+
+# Tailwindcss
+app/ui/styles/tailwind.css
+
