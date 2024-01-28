@@ -9,7 +9,7 @@ const Content: React.FC<ContentProps> = ({ children }) => {
 				id="MainContent"
 				className="flex-grow p-8 bg-slate-200"
 			>
-				<div className="container mx-auto bg-white shadow-lg rounded px-6 py-8">{children}</div>
+				<div className="container mx-auto bg-white shadow-lg rounded px-8 py-16">{children}</div>
 			</main>
 		</>
 	);
