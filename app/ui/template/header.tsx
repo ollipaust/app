@@ -1,15 +1,21 @@
-import siteConfig from "~/siteConfig";
+import siteConfig from "~/utils/siteConfig.tsx";
+import { LanguageSwitcher } from "../components/misc/language-switcher.tsx";
 
 const Header: React.FC = () => {
-	const navLinksClasses = "text-white hover:text-gray-200 font-semibold";
+	const navLinksClasses = "text-white hover:text-gray-500 font-semibold";
 	return (
 		<>
 			<div
 				id="Header"
-				className="sticky top-0 z-20 bg-gray-800 text-white px-6 py-4"
+				className="sticky top-0 z-20 bg-slate-900 text-white px-6 py-4"
 			>
 				<div className="flex flex-row justify-between container mx-auto">
-					<p className="self-start text-xl font-bold">{siteConfig.siteName}</p>
+					<a
+						href={siteConfig.homeUrl}
+						className="self-start text-xl font-bold"
+					>
+						{siteConfig.siteName}
+					</a>
 					<nav className="self-end">
 						<div>
 							<div className="flex space-x-4">
@@ -43,6 +49,9 @@ const Header: React.FC = () => {
 								>
 									Contact
 								</a>
+								<div>
+									<LanguageSwitcher />
+								</div>
 							</div>
 						</div>
 					</nav>

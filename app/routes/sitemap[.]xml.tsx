@@ -1,7 +1,7 @@
 import { generateSitemap } from "@nasa-gcn/remix-seo";
 import { routes } from "@remix-run/dev/server-build";
 import { type LoaderFunctionArgs } from "@remix-run/node";
-import siteConfig from "~/siteConfig";
+import siteConfig from "~/utils/siteConfig.tsx";
 
 export function loader({ request }: LoaderFunctionArgs) {
 	return generateSitemap(request, routes, {

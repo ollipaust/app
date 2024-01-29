@@ -1,0 +1,33 @@
+:root {
+	--text-primary: #000;
+	--background-primary: #fff;
+
+	--us-flag: linear-gradient(to right, #b22234, #dd4f43, #ffffff, #6b8eaa, #3c3b6e);
+	--de-flag: linear-gradient(to right, #000000, #dd0000, #ffce00);
+}
+
+/*
+  * Custom Background.
+  */
+.blobs {
+	opacity: 0.35;
+	position: fixed;
+	top: 80%;
+	left: 50%;
+	transform: translate(-50%, -0%);
+	max-height: 400px;
+	max-width: 640px;
+	width: 100%;
+	height: 100%;
+	background: var(--us-flag);
+	filter: blur(100px) saturate(150%);
+	z-index: -1;
+}
+
+.blobs.--us-flag {
+	background: var(--us-flag);
+}
+
+.blobs.--de-flag {
+	background: var(--de-flag);
+}

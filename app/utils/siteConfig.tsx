@@ -5,6 +5,7 @@ interface SiteConfig {
 	author: string;
 	keywords: string[];
 	siteUrl: string;
+	homeUrl: string;
 	ogImageUrl: string;
 	socialMedia: {
 		twitterHandle: string;
@@ -24,6 +25,7 @@ const siteConfig: SiteConfig = {
 	author: "Olli Paust",
 	keywords: ["awesome", "site", "technology", "blog", "tips"],
 	siteUrl: "https://app.ollipaust.dev",
+	homeUrl: "/",
 	ogImageUrl: "https://www.myawesomesite.com",
 	socialMedia: {
 		twitterHandle: "@yourtwitter",
