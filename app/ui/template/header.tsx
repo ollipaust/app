@@ -1,5 +1,4 @@
 import siteConfig from "~/utils/siteConfig.tsx";
-import { LanguageSwitcher } from "../components/misc/language-switcher.tsx";
 
 const Header: React.FC = () => {
 	const navLinksClasses = "text-white hover:text-gray-500 font-semibold";
@@ -49,9 +48,6 @@ const Header: React.FC = () => {
 								>
 									Contact
 								</a>
-								<div>
-									<LanguageSwitcher />
-								</div>
 							</div>
 						</div>
 					</nav>

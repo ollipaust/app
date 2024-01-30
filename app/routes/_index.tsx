@@ -1,28 +1,12 @@
 import type { MetaFunction } from "@remix-run/node";
 
-import { useTranslation } from "react-i18next";
-import { useHydrated } from "remix-utils/use-hydrated";
-
-import { Footer } from "~/ui/template/footer.tsx";
-
 import siteConfig from "~/utils/siteConfig.tsx";
 
 export const meta: MetaFunction = () => {
 	return [{ title: siteConfig.siteName }, { name: "description", content: siteConfig.siteDescription }];
 };
 
-const languageToEmojis = {
-	en: ["🍵", "EN", "🏰"],
-	de: ["🍻", "DE", "🚗"],
-};
-
 export default function Index() {
-	const isHydrated = useHydrated();
-
-	const { i18n, t } = useTranslation("common");
-	const language = i18n.resolvedLanguage;
-
-	const emojis = languageToEmojis[language as keyof typeof languageToEmojis] || ["😀"];
 
 	return (
 		<div>
@@ -40,19 +24,7 @@ export default function Index() {
 			</header>
 
 			<div className="relative mx-auto flex h-full w-full max-w-3xl flex-col items-center justify-center gap-8">
-				<span className="group flex items-center gap-4 text-8xl duration-200 hover:-translate-y-1">
-					<span className="opacity-60 transition group-hover:opacity-100">{emojis[0]}</span>
-					{emojis[1]}
-					<span className="opacity-60 transition group-hover:opacity-100">{emojis[2]}</span>
-				</span>
-
-				<div className="relative flex max-w-[725px] flex-col items-center justify-center text-center">
-					<div className="z-10 flex flex-col items-center justify-center">
-						<div className="sm:px-20">
-							<span className="text-[17px] font-medium tracking-[-0.16px] text-gray-600 md:text-xl">{t("greeting")}</span>
-						</div>
-					</div>
-				</div>
+			<p>Lorem ipsum sit dolor amet.</p>
 			</div>
 		</div>
 	);
