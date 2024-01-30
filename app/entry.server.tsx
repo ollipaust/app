@@ -1,6 +1,6 @@
 import { PassThrough } from "stream";
 import type { EntryContext } from "@remix-run/node";
-import { Response } from "@remix-run/web-fetch";
+import Response from "@remix-run/node";
 import { RemixServer } from "@remix-run/react";
 import { isbot } from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
@@ -12,6 +12,7 @@ import i18n from "./utils/i18n.ts"; // your i18n configuration file
 import { resolve } from "node:path";
 
 const ABORT_DELAY = 5000;
+
 
 export default async function handleRequest(
   request: Request,
