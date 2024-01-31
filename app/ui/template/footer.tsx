@@ -5,7 +5,7 @@ export function Footer() {
 		<footer className="bg-slate-900">
 			<div className="container mx-auto px-4 pb-8 pt-16 sm:px-6 lg:px-8">
 				<div className="mx-auto max-w-md">
-					<strong className="block text-center text-xl font-bold text-white sm:text-3xl">Want us to email you with the latest blockbuster news?</strong>
+					<strong className="block text-center text-xl font-bold text-white sm:text-3xl">Want us to email you with the latest news and updates?</strong>
 
 					<form className="mt-6">
 						<div className="relative max-w-lg">

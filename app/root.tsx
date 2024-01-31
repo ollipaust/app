@@ -1,11 +1,11 @@
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
 import type { LinksFunction } from "@remix-run/node";
-import { responseHeaders } from "./utils/responseHeaders.tsx";
 
+import siteConfig from "./utils/siteConfig.tsx";
+import { responseHeaders } from "./utils/responseHeaders.tsx";
 import Layout from "./ui/template/layout.tsx";
 
 import tailwindStylesheet from "./ui/styles/tailwind.css";
-import siteConfig from "./utils/siteConfig.tsx";
 
 // HTTP Headers
 export const headers = responseHeaders;
