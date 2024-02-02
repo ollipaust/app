@@ -25,7 +25,7 @@ const siteConfig: SiteConfig = {
 	author: "Olli Paust",
 	keywords: ["awesome", "site", "technology", "blog", "tips"],
 	siteUrl: "https://app.ollipaust.dev/",
-	homeUrl: "https://app.ollipaust.dev/",
+	homeUrl: "/",
 	ogImageUrl: "https://www.myawesomesite.com",
 	socialMedia: {
 		twitterHandle: "@yourtwitter",
