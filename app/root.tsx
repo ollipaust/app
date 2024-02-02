@@ -1,12 +1,14 @@
 import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from "@remix-run/react";
-
+import { useEffect, useState } from "react";
 import type { LinksFunction, LoaderFunction } from "@remix-run/node";
 import acceptLanguage from "accept-language-parser";
+import { useCookies } from "react-cookie";
 
 import siteConfig from "./utils/siteConfig.tsx";
 import { responseHeaders } from "./utils/responseHeaders.tsx";
-import Layout from "./ui/template/layout.tsx";
 import { LocaleProvider } from "./utils/i18n/localeProvider.tsx";
+import Layout from "./ui/template/layout.tsx";
+
 import tailwindStylesheet from "./ui/styles/tailwind.css";
 
 // HTTP Headers
@@ -27,24 +29,28 @@ export const links: LinksFunction = () => {
 };
 
 export const loader: LoaderFunction = async ({ request }) => {
-	const languages = acceptLanguage.parse(request.headers.get("Accept-Language") as string);
+    const languages = acceptLanguage.parse(request.headers.get("Accept-Language") as string);
+    if (languages?.length > 0) {
+        return languages[0].code; 
+    }
 
-	// If somehow the header is empty, return a default locale
-	if (languages?.length < 1) return "en-US";
-
-	// If there is no region for this locale, just return the code
-	if (!languages[0].region) return languages[0].code;
-
-	return `${languages[0].code}-${languages[0].region}`;
+    return "en";
 };
+
 
 // Application
 export default function App() {
-	const detectedLocale = useLoaderData();
+	const detectedLocale = useLoaderData<string>();
+    const [, setCookie] = useCookies(['appUserLocale']);
+    const formattedLocale = detectedLocale.startsWith('de') ? 'de-DE' : 'en-US';
 
-	return (
-		<LocaleProvider defaultLocale={detectedLocale as string}>
-			<html lang="en">
+    useEffect(() => {
+        setCookie('appUserLocale', formattedLocale, { path: '/' });
+    }, [formattedLocale, setCookie]);
+    
+    return (
+        <LocaleProvider defaultLocale={formattedLocale}>
+			<html lang={detectedLocale}>
 				<head>
 					<meta charSet="utf-8" />
 					<meta

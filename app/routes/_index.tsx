@@ -1,14 +1,14 @@
 import type { MetaFunction } from "@remix-run/node";
 import siteConfig from "~/utils/siteConfig.tsx";
-import LanguageSwitch from "~/ui/components/switch.tsx";
 import { useLocale } from "~/utils/i18n/localeProvider.tsx";
+import LocaleSwitcher from "~/ui/components/switcher.tsx";
 
 export const meta: MetaFunction = () => {
 	return [{ title: siteConfig.siteName }, { name: "description", content: siteConfig.siteDescription }];
 };
 
 export default function Index() {
-	const {currentLocale} = useLocale()
+	const { currentLocale } = useLocale();
 	return (
 		<div>
 			<header
@@ -25,7 +25,8 @@ export default function Index() {
 			</header>
 
 			<div className="relative mx-auto flex h-full w-full max-w-3xl flex-col items-center justify-center gap-8">
-				<LanguageSwitch />
+				Current Locale: {currentLocale}
+				<LocaleSwitcher />
 			</div>
 		</div>
 	);
