@@ -1,15 +1,14 @@
-import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration, useLoaderData } from "@remix-run/react";
-import { useEffect, useState } from "react";
-import type { LinksFunction, LoaderFunction } from "@remix-run/node";
-import acceptLanguage from "accept-language-parser";
-import { useCookies } from "react-cookie";
+import { Links, LiveReload, Meta, Outlet, Scripts, ScrollRestoration } from "@remix-run/react";
+import type { LinksFunction } from "@remix-run/node";
+import { responseHeaders } from "./utils/responseHeaders.tsx";
 
 import siteConfig from "./utils/siteConfig.tsx";
-import { responseHeaders } from "./utils/responseHeaders.tsx";
-import { LocaleProvider } from "./utils/i18n/localeProvider.tsx";
+import iconsHref from "~/icons.svg";
 import Layout from "./ui/template/layout.tsx";
+import MainBackground from "./ui/components/mainBackground.tsx";
 
 import tailwindStylesheet from "./ui/styles/tailwind.css";
+import globalStylesheet from './ui/styles/global.css'
 
 // HTTP Headers
 export const headers = responseHeaders;
@@ -23,76 +22,85 @@ export const links: LinksFunction = () => {
 		},
 		{
 			rel: "stylesheet",
+			href: globalStylesheet,
+		},
+		{
+			rel: "stylesheet",
 			href: "https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css",
 		},
 	];
 };
 
-export const loader: LoaderFunction = async ({ request }) => {
-    const languages = acceptLanguage.parse(request.headers.get("Accept-Language") as string);
-    if (languages?.length > 0) {
-        return languages[0].code; 
-    }
+interface DocumentProps {
+	children: React.ReactNode;
+	isDev: boolean;
+}
 
-    return "en";
-};
+// Document
+function Document({ children, isDev }: DocumentProps) {
 
+	return (
+		<html lang="de" className="relative">
+			<head>
+				<meta charSet="utf-8" />
+				<meta
+					name="viewport"
+					content="width=device-width, initial-scale=1"
+				/>
+				<meta
+					name="robots"
+					content="index, follow"
+				/>
+				<meta
+					name="theme-color"
+					content={siteConfig.themeColor}
+				/>
+				<meta
+					property="og:url"
+					content={siteConfig.siteUrl}
+				/>
+				<meta
+					property="og:title"
+					content={siteConfig.siteName}
+				/>
+				<meta
+					property="og:description"
+					content={siteConfig.siteDescription}
+				/>
+				<meta
+					property="og:image"
+					content={siteConfig.ogImageUrl}
+				/>
+				<Meta />
+				<Links />
+			</head> 
+			<body className="lg:py-16 bg-ci-primary-2">
+				<MainBackground id="splineBg" className="absolute bg-ci-primary-1 top-0 -z-10 w-full h-full blur-2xl" />
+				<Layout>
+					{children}
+					<ScrollRestoration />
+					<Scripts />
+					{isDev ? <LiveReload /> : null}
+				</Layout>
+			</body>
+		</html>
+	);
+}
 
 // Application
 export default function App() {
-	const detectedLocale = useLoaderData<string>();
-    const [, setCookie] = useCookies(['appUserLocale']);
-    const formattedLocale = detectedLocale.startsWith('de') ? 'de-DE' : 'en-US';
-
-    useEffect(() => {
-        setCookie('appUserLocale', formattedLocale, { path: '/' });
-    }, [formattedLocale, setCookie]);
-    
-    return (
-        <LocaleProvider defaultLocale={formattedLocale}>
-			<html lang={detectedLocale}>
-				<head>
-					<meta charSet="utf-8" />
-					<meta
-						name="viewport"
-						content="width=device-width, initial-scale=1"
-					/>
-					<meta
-						name="robots"
-						content="index, follow"
-					/>
-					<meta
-						name="theme-color"
-						content={siteConfig.themeColor}
-					/>
-					<meta
-						property="og:url"
-						content={siteConfig.siteUrl}
-					/>
-					<meta
-						property="og:title"
-						content={siteConfig.siteName}
-					/>
-					<meta
-						property="og:description"
-						content={siteConfig.siteDescription}
-					/>
-					<meta
-						property="og:image"
-						content={siteConfig.ogImageUrl}
-					/>
-					<Meta />
-					<Links />
-				</head>
-				<body>
-					<Layout>
-						<Outlet />
-						<ScrollRestoration />
-						<Scripts />
-						<LiveReload />
-					</Layout>
-				</body>
-			</html>
-		</LocaleProvider>
+	return (
+		<Document isDev={process.env.NODE_ENV === "development"}>
+			<Outlet />
+			<img
+				src={iconsHref}
+				alt=""
+				hidden
+				// this img tag simply forces the icons to be loaded at a higher
+				// priority than the scripts (chrome only for now)
+				// @ts-expect-error -- silly React pretending this attribute doesn't exist
+				fetchpriority="high"
+			/>
+		</Document>
 	);
 }

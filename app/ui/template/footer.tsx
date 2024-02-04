@@ -1,56 +1,31 @@
 import siteConfig from "~/utils/siteConfig.tsx";
+import NewsletterForm from "../components/newsletterForm.tsx";
 
 export function Footer() {
 	return (
-		<footer className="bg-slate-900">
-			<div className="container mx-auto px-4 pb-8 pt-16 sm:px-6 lg:px-8">
-				<div className="mx-auto max-w-md">
-					<strong className="block text-center text-xl font-bold text-white sm:text-3xl">Want us to email you with the latest news and updates?</strong>
-
-					<form className="mt-6">
-						<div className="relative max-w-lg">
-							<label
-								className="sr-only"
-								htmlFor="email"
-							>
-								{" "}
-								Email{" "}
-							</label>
-
-							<input
-								className="w-full rounded-full border-gray-200 bg-gray-100 p-4 pe-32 text-sm font-medium"
-								id="email"
-								type="email"
-								placeholder="john@doe.com"
-							/>
-
-							<button className="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-blue-600 px-5 py-3 text-sm font-medium text-white transition hover:bg-blue-700">
-								Subscribe
-							</button>
-						</div>
-					</form>
-				</div>
-
+		<footer className="bg-ci-light-1/[.50] lg:rounded-b-2xl">
+			<div className="container max-w-screen-xl mx-auto px-4 pb-8 pt-16 sm:px-6 lg:px-8">
+				<NewsletterForm headline="Want us to email you with the latest news and updates?" />
 				<div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
 					<div className="mx-auto max-w-sm lg:max-w-none">
 						<img
 							src="/assets/company_logo.svg"
-							className="mx-auto lg:ml-0 lg:mr-auto"
+							className="mx-auto lg:ml-0 lg:mr-auto drop-shadow"
 							alt={`${siteConfig.siteName} Logo`}
 						/>
-						<p className="mt-4 text-center text-white lg:text-left lg:text-lg">
+						<p className="mt-4 text-center text-white text-shadow-sm lg:text-left lg:text-lg">
 							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium natus quod eveniet aut perferendis distinctio iusto repudiandae, provident velit
 							earum?
 						</p>
 
 						<div className="mt-6 flex justify-center gap-4 lg:justify-start">
 							<a
-								className="text-gray-500 transition hover:text-gray-700/75"
+								className="text-ci-primary-3 transition hover:text-ci-primary-1"
 								href=""
 								target="_blank"
 								rel="noreferrer"
 							>
-								<span className="sr-only"> Facebook </span>
+								<span className="sr-only">Facebook</span>
 
 								<svg
 									className="h-6 w-6"
@@ -67,12 +42,12 @@ export function Footer() {
 							</a>
 
 							<a
-								className="text-gray-500 transition hover:text-gray-700/75"
+								className="text-ci-primary-3 transition hover:text-ci-primary-1"
 								href=""
 								target="_blank"
 								rel="noreferrer"
 							>
-								<span className="sr-only"> Instagram </span>
+								<span className="sr-only">Instagram</span>
 
 								<svg
 									className="h-6 w-6"
@@ -89,12 +64,12 @@ export function Footer() {
 							</a>
 
 							<a
-								className="text-gray-500 transition hover:text-gray-700/75"
+								className="text-ci-primary-3 transition hover:text-ci-primary-1"
 								href=""
 								target="_blank"
 								rel="noreferrer"
 							>
-								<span className="sr-only"> Twitter </span>
+								<span className="sr-only">X</span>
 
 								<svg
 									className="h-6 w-6"
@@ -102,17 +77,17 @@ export function Footer() {
 									viewBox="0 0 24 24"
 									aria-hidden="true"
 								>
-									<path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" />
+									<path d="M18.326 1.904H21.7l-7.37 8.423L23 21.79h-6.789l-5.317-6.952L4.81 21.79H1.434l7.883-9.01L1 1.904h6.961l4.806 6.354 5.56-6.354ZM17.142 19.77h1.87L6.945 3.817H4.94l12.203 15.954Z" />
 								</svg>
 							</a>
 
 							<a
-								className="text-gray-500 transition hover:text-gray-700/75"
+								className="text-ci-primary-3 transition hover:text-ci-primary-1"
 								href=""
 								target="_blank"
 								rel="noreferrer"
 							>
-								<span className="sr-only"> GitHub </span>
+								<span className="sr-only">GitHub</span>
 
 								<svg
 									className="h-6 w-6"
@@ -129,12 +104,12 @@ export function Footer() {
 							</a>
 
 							<a
-								className="text-gray-500 transition hover:text-gray-700/75"
+								className="text-ci-primary-3 transition hover:text-ci-primary-1"
 								href=""
 								target="_blank"
 								rel="noreferrer"
 							>
-								<span className="sr-only"> Dribbble </span>
+								<span className="sr-only">Dribbble</span>
 
 								<svg
 									className="h-6 w-6"
@@ -154,22 +129,22 @@ export function Footer() {
 
 					<div className="grid grid-cols-1 gap-8 text-center lg:grid-cols-3 lg:text-left">
 						<div>
-							<strong className="font-medium text-white">Services</strong>
+							<strong className="text-ci-primary-3 text-shadow-sm font-medium lg:text-lg">Services</strong>
 
 							<ul className="space-y-1">
 								<li>
 									<a
-										className="text-gray-500 transition hover:text-gray-700/75"
+										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
 										href="/"
 									>
-										{" "}
-										Marketing{" "}
+										
+										Marketing
 									</a>
 								</li>
 
 								<li>
 									<a
-										className="text-gray-500 transition hover:text-gray-700/75"
+										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
 										href="/"
 									>
 										Graphic Design
@@ -178,7 +153,7 @@ export function Footer() {
 
 								<li>
 									<a
-										className="text-gray-500 transition hover:text-gray-700/75"
+										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
 										href="/"
 									>
 										App Development
@@ -187,7 +162,7 @@ export function Footer() {
 
 								<li>
 									<a
-										className="text-gray-500 transition hover:text-gray-700/75"
+										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
 										href="/"
 									>
 										Web Development
@@ -197,82 +172,82 @@ export function Footer() {
 						</div>
 
 						<div>
-							<strong className="font-medium text-white"> About </strong>
+							<strong className="text-ci-primary-3 text-shadow-sm font-medium lg:text-lg">About</strong>
 
 							<ul className="space-y-1">
 								<li>
 									<a
-										className="text-gray-500 transition hover:text-gray-700/75"
+										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
 										href="/"
 									>
-										{" "}
-										About{" "}
+										
+										About
 									</a>
 								</li>
 
 								<li>
 									<a
-										className="text-gray-500 transition hover:text-gray-700/75"
+										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
 										href="/"
 									>
-										{" "}
-										Careers{" "}
+										
+										Careers
 									</a>
 								</li>
 
 								<li>
 									<a
-										className="text-gray-500 transition hover:text-gray-700/75"
+										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
 										href="/"
 									>
-										{" "}
-										History{" "}
+										
+										History
 									</a>
 								</li>
 
 								<li>
 									<a
-										className="text-gray-500 transition hover:text-gray-700/75"
+										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
 										href="/"
 									>
-										{" "}
-										Our Team{" "}
+										
+										Our Team
 									</a>
 								</li>
 							</ul>
 						</div>
 
 						<div>
-							<strong className="font-medium text-white"> Support </strong>
+							<strong className="text-ci-primary-3 text-shadow-sm font-medium lg:text-lg">Support</strong>
 
 							<ul className="space-y-1">
 								<li>
 									<a
-										className="text-gray-500 transition hover:text-gray-700/75"
+										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
 										href="/"
 									>
-										{" "}
-										FAQs{" "}
+										
+										FAQs
 									</a>
 								</li>
 
 								<li>
 									<a
-										className="text-gray-500 transition hover:text-gray-700/75"
+										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
 										href="/"
 									>
-										{" "}
-										Contact{" "}
+										
+										Contact
 									</a>
 								</li>
 
 								<li>
 									<a
-										className="text-gray-500 transition hover:text-gray-700/75"
+										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
 										href="/"
 									>
-										{" "}
-										Live Chat{" "}
+										
+										Live Chat
 									</a>
 								</li>
 							</ul>
@@ -280,8 +255,8 @@ export function Footer() {
 					</div>
 				</div>
 
-				<div className="mt-16 border-t border-gray-700 pt-8">
-					<p className="text-center lg:text-lg text-gray-500 font-semibold">
+				<div className="mt-16 border-t border- pt-8">
+					<p className="text-center text-ci-primary-3 text-shadow-sm">
 						&copy; {siteConfig.siteYear} {siteConfig.author}. All rights reserved.
 					</p>
 				</div>

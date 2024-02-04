@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import plugin from "tailwindcss/plugin.js";
 
 const customSizes = {
 	"10": "2.5rem", // 40px
@@ -13,6 +14,42 @@ export default {
 	content: ["./app/**/*.{js,jsx,ts,tsx}"],
 	theme: {
 		extend: {
+			colors: {
+				// Corporate Identity (CI) Colors
+				ci: {
+					primary: {
+						1: '#33D790', // Primary (Emerald)
+						2: '#0B8069', // Primary Dark
+						3: '#146450', // Primary Darker
+					},
+					accent: {
+						1: '#FFF75C', // Accent (Yellow)
+						2: '#FDDB1A' // Accent Darker
+					},
+					secondary: {
+						1: '#35D4C2', // Secondary (Turquois)
+						2: '#279F81', // Secondary Darker
+					},
+					light: {
+						1: '#F0F3EB', // Primary Light
+						2: '#E4F0D1', // Accent Light
+						3: '#E5EAE0', // Secondary Light
+					},
+					dark: {
+						1: '#0D3119', // Primary Dark
+						2: '#292614', // Accent Dark
+						3: '#1F3233', // Secondary Dark
+					}
+				}
+			},
+			fontFamily: {
+				'raleway': ['Raleway', 'sans-serif']
+			},
+			textShadow: {
+				sm: '0 1px 2px #146450',
+				DEFAULT: '0 2px 4px #146450',
+				lg: '0 8px 16px #146450',
+			},
 			padding: {
 				...customSizes,
 			},
@@ -57,5 +94,16 @@ export default {
 			},
 		},
 	},
-	plugins: [],
+	plugins: [
+		plugin(function ({ matchUtilities, theme }) {
+			matchUtilities(
+			  {
+				'text-shadow': (value) => ({
+				  textShadow: value,
+				}),
+			  },
+			  { values: theme('textShadow') }
+			)
+		  }),
+	],
 } satisfies Config;

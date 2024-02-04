@@ -19,7 +19,7 @@ interface SiteConfig {
 }
 
 const siteConfig: SiteConfig = {
-	siteName: "My Awesome Site",
+	siteName: "ZEP",
 	siteYear: new Date().getFullYear(),
 	siteDescription: "This is an awesome site about awesome things.",
 	author: "Olli Paust",
