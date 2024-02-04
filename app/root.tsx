@@ -74,7 +74,7 @@ function Document({ children, isDev }: DocumentProps) {
 				<Meta />
 				<Links />
 			</head> 
-			<body className="lg:py-16 bg-ci-primary-2">
+			<body className="lg:py-16 bg-ci-primary-1">
 				<MainBackground id="splineBg" className="absolute bg-ci-primary-1 top-0 -z-10 w-full h-full blur-2xl" />
 				<Layout>
 					{children}
