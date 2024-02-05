@@ -5,6 +5,7 @@ function Header() {
 	const [isSticky, setIsSticky] = useState(false);
 	const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 	const navLinksClasses = "text-white hover:text-ci-primary-1 transition font-semibold text-shadow lg:text-lg";
+	const dropDownNavLinksClasses = "text-ci-secondary-1 hover:text-ci-primary-1 transition font-semibold text-shadow lg:text-lg block px-4 py-2 text-center";
 
 	// Check and update isSticky state from localStorage only on client-side
 	useEffect(() => {
@@ -115,34 +116,34 @@ function Header() {
 							</svg>
 						</button>
 						{isDropdownVisible && (
-							<div className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-lg shadow-xl">
+							<div className="absolute right-0 mt-2 py-2 w-64 z-10 bg-white rounded-lg shadow-xl">
 								<a
 									href="#"
-									className={navLinksClasses + " block px-4 py-2"}
+									className={dropDownNavLinksClasses}
 								>
 									Produkte
 								</a>
 								<a
 									href="#"
-									className={navLinksClasses + " block px-4 py-2"}
+									className={dropDownNavLinksClasses}
 								>
 									Module
 								</a>
 								<a
 									href="#"
-									className={navLinksClasses + " block px-4 py-2"}
+									className={dropDownNavLinksClasses}
 								>
 									Preise
 								</a>
 								<a
 									href="#"
-									className={navLinksClasses + " block px-4 py-2"}
+									className={dropDownNavLinksClasses}
 								>
 									Wissen
 								</a>
 								<a
 									href="#"
-									className={navLinksClasses + " block px-4 py-2"}
+									className={dropDownNavLinksClasses}
 								>
 									Über uns
 								</a>

@@ -23,8 +23,8 @@ export default {
 						3: "#0A715C", // Primary Darker
 					},
 					accent: {
-						1: "#FFF75C", // Accent (Yellow)
-						2: "#FDDB1A", // Accent Darker
+						1: "#FDDB1A", // Accent (Yellow)
+						2: "#FCC736", // Accent Darker
 					},
 					secondary: {
 						1: "#008d47", // Secondary (Turquois)

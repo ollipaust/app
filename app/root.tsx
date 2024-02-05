@@ -6,6 +6,7 @@ import siteConfig from "./utils/siteConfig.tsx";
 import iconsHref from "~/icons.svg";
 import Layout from "./ui/template/layout.tsx";
 import MainBackground from "./ui/components/mainBackground.tsx";
+import TimeTrackingProvider from "./utils/timeTrackingProvider.tsx";
 
 import tailwindStylesheet from "./ui/styles/tailwind.css";
 import globalStylesheet from "./ui/styles/global.css";
@@ -95,17 +96,19 @@ function Document({ children, isDev }: DocumentProps) {
 // Application
 export default function App() {
 	return (
-		<Document isDev={process.env.NODE_ENV === "development"}>
-			<Outlet />
-			<img
-				src={iconsHref}
-				alt=""
-				hidden
-				// this img tag simply forces the icons to be loaded at a higher
-				// priority than the scripts (chrome only for now)
-				// @ts-expect-error -- silly React pretending this attribute doesn't exist
-				fetchpriority="high"
-			/>
-		</Document>
+		<TimeTrackingProvider>
+			<Document isDev={process.env.NODE_ENV === "development"}>
+				<Outlet />
+				<img
+					src={iconsHref}
+					alt=""
+					hidden
+					// this img tag simply forces the icons to be loaded at a higher
+					// priority than the scripts (chrome only for now)
+					// @ts-expect-error -- silly React pretending this attribute doesn't exist
+					fetchpriority="high"
+				/>
+			</Document>
+		</TimeTrackingProvider>
 	);
 }

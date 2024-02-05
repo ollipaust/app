@@ -20,12 +20,12 @@ interface SiteConfig {
 }
 
 const siteConfig: SiteConfig = {
-	siteName: "ZEP GmbH",
+	siteName: "ZEA.js",
 	siteYear: new Date().getFullYear(),
-	siteDescription: "This is an awesome site about awesome things.",
+	siteDescription: "Die einfache Zeit Erfassungs App in Remix.js",
 	author: "Olli Paust",
-	keywords: ["awesome", "site", "technology", "blog", "tips"],
-	logo: "ZEP",
+	keywords: ["app", "time tracking", "productivity", "remix", "react"],
+	logo: "ZEA",
 	siteUrl: "https://app.ollipaust.dev/",
 	homeUrl: "/",
 	ogImageUrl: "https://www.myawesomesite.com",
