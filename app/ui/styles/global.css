@@ -5,5 +5,4 @@ html {
 body {
 	@apply font-raleway;
 	font-size: 1rem; /* This ensures the body text uses the root font size */
-
 }

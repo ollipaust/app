@@ -36,19 +36,19 @@ function Header() {
 					{/* Logo and site name */}
 					<a
 						href={siteConfig.homeUrl}
-						className="self-start text-black hover:text-ci-primary-1 transition text-3xl font-bold my-auto"
+						className="self-start text-ci-secondary-2 hover:text-ci-primary-1 transition delay-150 text-3xl font-extrabold my-auto"
 					>
-						<span className="relative">
-							{siteConfig.logo}
+						<span className="relative inline-flex flex-row gap-1 justify-start items-center">
 							<img
-								className="absolute -top-[2px] -right-10 w-[35px] h-auto"
+								className="w-[35px] h-auto"
 								src="/assets/logo.png"
 								alt="Logo"
 							/>
+							{siteConfig.logo}
 						</span>
 					</a>
 					{/* Default Navigation */}
-					<nav className="hidden lg:flex space-x-6">
+					<nav className="hidden lg:flex justify-end items-center space-x-6">
 						<a
 							href="#"
 							className={navLinksClasses}

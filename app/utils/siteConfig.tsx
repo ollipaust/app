@@ -20,12 +20,12 @@ interface SiteConfig {
 }
 
 const siteConfig: SiteConfig = {
-	siteName: "ZEP",
+	siteName: "ZEP GmbH",
 	siteYear: new Date().getFullYear(),
 	siteDescription: "This is an awesome site about awesome things.",
 	author: "Olli Paust",
 	keywords: ["awesome", "site", "technology", "blog", "tips"],
-	logo: 'ZEP',
+	logo: "ZEP",
 	siteUrl: "https://app.ollipaust.dev/",
 	homeUrl: "/",
 	ogImageUrl: "https://www.myawesomesite.com",

@@ -27,8 +27,8 @@ export default {
 						2: "#FDDB1A", // Accent Darker
 					},
 					secondary: {
-						1: "#35D4C2", // Secondary (Turquois)
-						2: "#279F81", // Secondary Darker
+						1: "#008d47", // Secondary (Turquois)
+						2: "#0E433D", // Secondary Darker
 					},
 					light: {
 						1: "#F0F3EB", // Primary Light

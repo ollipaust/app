@@ -1,13 +1,28 @@
+import React from "react";
 import siteConfig from "~/utils/siteConfig.tsx";
 import NewsletterForm from "../components/newsletterForm.tsx";
 
 export function Footer() {
+	const corporateLinks = [
+		{ title: "Impressum", href: "/" },
+		{ title: "Datenschutz", href: "/" },
+		{ title: "AGB", href: "/" },
+	];
 	return (
-		<footer id="Footer" className="bg-ci-light-3/[.66] lg:rounded-b-2xl">
+		<footer
+			id="Footer"
+			className="bg-ci-light-3/[.66] lg:rounded-b-2xl"
+		>
 			<div className="container max-w-screen-xl mx-auto px-4 pb-8 pt-16 sm:px-6 lg:px-8">
 				<NewsletterForm headline="Lorem ipsum, dolor sit amet consectetur adipisicing elit?" />
-				<div id="FooterContent" className="grid lg:grid-cols-2 gap-4 mt-16">
-					<div id="FooterBranding" className="lg:max-w-md max-w-sm">
+				<div
+					id="FooterContent"
+					className="grid lg:grid-cols-2 gap-10 mt-16"
+				>
+					<div
+						id="FooterBranding"
+						className="lg:max-w-md max-w-sm"
+					>
 						<img
 							src="/assets/company_logo.svg"
 							className="mx-auto lg:ml-0 lg:mr-auto drop-shadow"
@@ -17,9 +32,12 @@ export function Footer() {
 							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium natus quod eveniet aut perferendis distinctio iusto repudiandae, provident velit
 							earum?
 						</p>
-						<div id="SocialLinks" className="mt-6 flex justify-center gap-4 lg:justify-start">
+						<div
+							id="SocialLinks"
+							className="mt-6 flex justify-center gap-4 lg:justify-start"
+						>
 							<a
-								className="text-ci-primary-3 transition  hover:text-ci-primary-1 drop-shadow-sm"
+								className="text-ci-secondary-1 transition  hover:text-ci-primary-1 drop-shadow-sm"
 								href=""
 								target="_blank"
 								rel="noreferrer"
@@ -39,7 +57,7 @@ export function Footer() {
 								</svg>
 							</a>
 							<a
-								className="text-ci-primary-3 transition  hover:text-ci-primary-1 drop-shadow-sm"
+								className="text-ci-secondary-1 transition  hover:text-ci-primary-1 drop-shadow-sm"
 								href=""
 								target="_blank"
 								rel="noreferrer"
@@ -59,7 +77,7 @@ export function Footer() {
 								</svg>
 							</a>
 							<a
-								className="text-ci-primary-3 transition  hover:text-ci-primary-1 drop-shadow-sm"
+								className="text-ci-secondary-1 transition  hover:text-ci-primary-1 drop-shadow-sm"
 								href=""
 								target="_blank"
 								rel="noreferrer"
@@ -75,7 +93,7 @@ export function Footer() {
 								</svg>
 							</a>
 							<a
-								className="text-ci-primary-3 transition  hover:text-ci-primary-1 drop-shadow-sm"
+								className="text-ci-secondary-1 transition  hover:text-ci-primary-1 drop-shadow-sm"
 								href=""
 								target="_blank"
 								rel="noreferrer"
@@ -95,7 +113,7 @@ export function Footer() {
 								</svg>
 							</a>
 							<a
-								className="text-ci-primary-3 transition  hover:text-ci-primary-1 drop-shadow-sm"
+								className="text-ci-secondary-1 transition  hover:text-ci-primary-1 drop-shadow-sm"
 								href=""
 								target="_blank"
 								rel="noreferrer"
@@ -116,10 +134,16 @@ export function Footer() {
 							</a>
 						</div>
 					</div>
-					<div id="FooterNavigation" className="flex flex-col flex-grow justify-between items-end">
-					<div id="FooterMenu" className="flex lg:flex-row flex-col gap-16">
+					<div
+						id="FooterNavigation"
+						className="flex flex-col flex-grow justify-between lg:items-end items-center gap-10"
+					>
+						<div
+							id="FooterMenu"
+							className="flex lg:flex-row flex-col lg:gap-16 gap-6"
+						>
 							<div>
-								<strong className="text-ci-primary-2 font-semibold lg:text-lg">Footer Nav 1</strong>
+								<strong className="text-ci-secondary-1 font-semibold lg:text-lg">Footer Nav 1</strong>
 								<ul className="space-y-1 mt-2">
 									<li>
 										<a
@@ -156,7 +180,7 @@ export function Footer() {
 								</ul>
 							</div>
 							<div>
-								<strong className="text-ci-primary-2 font-semibold lg:text-lg">Footer Nav 2</strong>
+								<strong className="text-ci-secondary-1 font-semibold lg:text-lg">Footer Nav 2</strong>
 								<ul className="space-y-1 mt-2">
 									<li>
 										<a
@@ -193,7 +217,7 @@ export function Footer() {
 								</ul>
 							</div>
 							<div>
-								<strong className="text-ci-primary-2 font-semibold lg:text-lg">Footer Nav 3</strong>
+								<strong className="text-ci-secondary-1 font-semibold lg:text-lg">Footer Nav 3</strong>
 								<ul className="space-y-1 mt-2">
 									<li>
 										<a
@@ -222,10 +246,20 @@ export function Footer() {
 								</ul>
 							</div>
 						</div>
-						<div id="Corporate" className="flex flex-row justify-between items-end gap-4">
-							<a href="/" className="text-ci-primary-3 transition  hover:text-ci-primary-1">Impressum</a>
-							<a href="/" className="text-ci-primary-3 transition  hover:text-ci-primary-1">Datenschutz</a>
-							<a href="/" className="text-ci-primary-3 transition  hover:text-ci-primary-1">AGB</a>
+						<div
+							id="Corporate"
+							className="flex flex-row justify-between items-end gap-4"
+						>
+						      {corporateLinks.map((link, index) => (
+        <React.Fragment key={index}>
+          <a href={link.href} className="text-ci-secondary-1 transition hover:text-ci-primary-1">
+            {link.title}
+          </a>
+          {(index === 0 || index === 1) && (
+            <span className="text-ci-secondary-1 my-auto leading-[0] text-2xl">•</span>
+          )}
+        </React.Fragment>
+      ))}
 						</div>
 					</div>
 				</div>
