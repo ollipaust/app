@@ -30,7 +30,7 @@ function Header() {
 		<>
 			<div
 				id="Header"
-				className={`sticky max-w-screen-2xl top-0 z-20 text-white px-8 py-4 ${isSticky ? "lg:rounded-t-xl bg-ci-light-3/[.66]" : "bg-ci-primary-2"}`}
+				className={`sticky max-w-screen-2xl top-0 z-20 text-white px-8 py-4 ${isSticky ? "lg:rounded-t-xl bg-ci-light-3/[.66]" : "bg-ci-primary-2 shadow-md"}`}
 			>
 				<div className={`flex flex-row justify-between container max-w-screen-2xl mx-auto ${isSticky && 'pb-4 border-b'}`}>
 					<a
