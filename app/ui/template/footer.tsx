@@ -13,7 +13,7 @@ export function Footer() {
 							className="mx-auto lg:ml-0 lg:mr-auto drop-shadow"
 							alt={`${siteConfig.siteName} Logo`}
 						/>
-						<p className="mt-4 text-center text-white text-shadow-sm lg:text-left lg:text-lg">
+						<p className="mt-4 text-center text-white lg:text-left lg:text-lg">
 							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium natus quod eveniet aut perferendis distinctio iusto repudiandae, provident velit
 							earum?
 						</p>
@@ -129,12 +129,12 @@ export function Footer() {
 
 					<div className="grid grid-cols-1 gap-8 text-center lg:grid-cols-3 lg:text-left">
 						<div>
-							<strong className="text-ci-primary-3 text-shadow-sm font-medium lg:text-lg">Services</strong>
+							<strong className="text-ci-primary-3 font-medium lg:text-lg">Services</strong>
 
 							<ul className="space-y-1">
 								<li>
 									<a
-										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
+										className="text-white transition hover:text-ci-primary-1"
 										href="/"
 									>
 										
@@ -144,7 +144,7 @@ export function Footer() {
 
 								<li>
 									<a
-										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
+										className="text-white transition hover:text-ci-primary-1"
 										href="/"
 									>
 										Graphic Design
@@ -153,7 +153,7 @@ export function Footer() {
 
 								<li>
 									<a
-										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
+										className="text-white transition hover:text-ci-primary-1"
 										href="/"
 									>
 										App Development
@@ -162,7 +162,7 @@ export function Footer() {
 
 								<li>
 									<a
-										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
+										className="text-white transition hover:text-ci-primary-1"
 										href="/"
 									>
 										Web Development
@@ -172,12 +172,12 @@ export function Footer() {
 						</div>
 
 						<div>
-							<strong className="text-ci-primary-3 text-shadow-sm font-medium lg:text-lg">About</strong>
+							<strong className="text-ci-primary-3 font-medium lg:text-lg">About</strong>
 
 							<ul className="space-y-1">
 								<li>
 									<a
-										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
+										className="text-white transition hover:text-ci-primary-1"
 										href="/"
 									>
 										
@@ -187,7 +187,7 @@ export function Footer() {
 
 								<li>
 									<a
-										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
+										className="text-white transition hover:text-ci-primary-1"
 										href="/"
 									>
 										
@@ -197,7 +197,7 @@ export function Footer() {
 
 								<li>
 									<a
-										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
+										className="text-white transition hover:text-ci-primary-1"
 										href="/"
 									>
 										
@@ -207,7 +207,7 @@ export function Footer() {
 
 								<li>
 									<a
-										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
+										className="text-white transition hover:text-ci-primary-1"
 										href="/"
 									>
 										
@@ -218,12 +218,12 @@ export function Footer() {
 						</div>
 
 						<div>
-							<strong className="text-ci-primary-3 text-shadow-sm font-medium lg:text-lg">Support</strong>
+							<strong className="text-ci-primary-3 font-medium lg:text-lg">Support</strong>
 
 							<ul className="space-y-1">
 								<li>
 									<a
-										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
+										className="text-white transition hover:text-ci-primary-1"
 										href="/"
 									>
 										
@@ -233,7 +233,7 @@ export function Footer() {
 
 								<li>
 									<a
-										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
+										className="text-white transition hover:text-ci-primary-1"
 										href="/"
 									>
 										
@@ -243,7 +243,7 @@ export function Footer() {
 
 								<li>
 									<a
-										className="text-white text-shadow-sm transition hover:text-ci-primary-1"
+										className="text-white transition hover:text-ci-primary-1"
 										href="/"
 									>
 										
@@ -256,7 +256,7 @@ export function Footer() {
 				</div>
 
 				<div className="mt-16 border-t border- pt-8">
-					<p className="text-center text-ci-primary-3 text-shadow-sm">
+					<p className="text-center text-ci-primary-3">
 						&copy; {siteConfig.siteYear} {siteConfig.author}. All rights reserved.
 					</p>
 				</div>

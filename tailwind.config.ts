@@ -20,7 +20,7 @@ export default {
 					primary: {
 						1: '#33D790', // Primary (Emerald)
 						2: '#0B8069', // Primary Dark
-						3: '#146450', // Primary Darker
+						3: '#2a8f29', // Primary Darker
 					},
 					accent: {
 						1: '#FFF75C', // Accent (Yellow)
