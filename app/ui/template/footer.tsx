@@ -3,9 +3,9 @@ import NewsletterForm from "../components/newsletterForm.tsx";
 
 export function Footer() {
 	return (
-		<footer className="bg-ci-light-1/[.50] lg:rounded-b-2xl">
+		<footer className="bg-ci-light-3/[.66] lg:rounded-b-2xl">
 			<div className="container max-w-screen-xl mx-auto px-4 pb-8 pt-16 sm:px-6 lg:px-8">
-				<NewsletterForm headline="Want us to email you with the latest news and updates?" />
+				<NewsletterForm headline="Lorem ipsum, dolor sit amet consectetur adipisicing elit?" />
 				<div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
 					<div className="mx-auto max-w-sm lg:max-w-none">
 						<img
@@ -13,20 +13,18 @@ export function Footer() {
 							className="mx-auto lg:ml-0 lg:mr-auto drop-shadow"
 							alt={`${siteConfig.siteName} Logo`}
 						/>
-						<p className="mt-4 text-center text-white lg:text-left lg:text-lg">
+						<p className="mt-4 text-center text-white text-shadow lg:text-left lg:text-lg">
 							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium natus quod eveniet aut perferendis distinctio iusto repudiandae, provident velit
 							earum?
 						</p>
-
 						<div className="mt-6 flex justify-center gap-4 lg:justify-start">
 							<a
-								className="text-ci-primary-3 transition hover:text-ci-primary-1"
+								className="text-ci-primary-3 transition  hover:text-ci-primary-1"
 								href=""
 								target="_blank"
 								rel="noreferrer"
 							>
 								<span className="sr-only">Facebook</span>
-
 								<svg
 									className="h-6 w-6"
 									fill="currentColor"
@@ -40,15 +38,13 @@ export function Footer() {
 									/>
 								</svg>
 							</a>
-
 							<a
-								className="text-ci-primary-3 transition hover:text-ci-primary-1"
+								className="text-ci-primary-3 transition  hover:text-ci-primary-1"
 								href=""
 								target="_blank"
 								rel="noreferrer"
 							>
 								<span className="sr-only">Instagram</span>
-
 								<svg
 									className="h-6 w-6"
 									fill="currentColor"
@@ -62,15 +58,13 @@ export function Footer() {
 									/>
 								</svg>
 							</a>
-
 							<a
-								className="text-ci-primary-3 transition hover:text-ci-primary-1"
+								className="text-ci-primary-3 transition  hover:text-ci-primary-1"
 								href=""
 								target="_blank"
 								rel="noreferrer"
 							>
 								<span className="sr-only">X</span>
-
 								<svg
 									className="h-6 w-6"
 									fill="currentColor"
@@ -80,15 +74,13 @@ export function Footer() {
 									<path d="M18.326 1.904H21.7l-7.37 8.423L23 21.79h-6.789l-5.317-6.952L4.81 21.79H1.434l7.883-9.01L1 1.904h6.961l4.806 6.354 5.56-6.354ZM17.142 19.77h1.87L6.945 3.817H4.94l12.203 15.954Z" />
 								</svg>
 							</a>
-
 							<a
-								className="text-ci-primary-3 transition hover:text-ci-primary-1"
+								className="text-ci-primary-3 transition  hover:text-ci-primary-1"
 								href=""
 								target="_blank"
 								rel="noreferrer"
 							>
 								<span className="sr-only">GitHub</span>
-
 								<svg
 									className="h-6 w-6"
 									fill="currentColor"
@@ -102,15 +94,13 @@ export function Footer() {
 									/>
 								</svg>
 							</a>
-
 							<a
-								className="text-ci-primary-3 transition hover:text-ci-primary-1"
+								className="text-ci-primary-3 transition  hover:text-ci-primary-1"
 								href=""
 								target="_blank"
 								rel="noreferrer"
 							>
 								<span className="sr-only">Dribbble</span>
-
 								<svg
 									className="h-6 w-6"
 									fill="currentColor"
@@ -126,128 +116,107 @@ export function Footer() {
 							</a>
 						</div>
 					</div>
-
 					<div className="grid grid-cols-1 gap-8 text-center lg:grid-cols-3 lg:text-left">
 						<div>
-							<strong className="text-ci-primary-3 font-medium lg:text-lg">Services</strong>
-
-							<ul className="space-y-1">
+							<strong className="text-ci-primary-2 font-semibold lg:text-lg">Footer Nav 1</strong>
+							<ul className="space-y-1 mt-2">
 								<li>
 									<a
-										className="text-white transition hover:text-ci-primary-1"
+										className="text-white text-shadow transition  hover:text-ci-primary-1"
 										href="/"
 									>
-										
-										Marketing
+										Footer Link 1
 									</a>
 								</li>
-
 								<li>
 									<a
-										className="text-white transition hover:text-ci-primary-1"
+										className="text-white text-shadow transition  hover:text-ci-primary-1"
 										href="/"
 									>
-										Graphic Design
+										Footer Link 2
 									</a>
 								</li>
-
 								<li>
 									<a
-										className="text-white transition hover:text-ci-primary-1"
+										className="text-white text-shadow transition  hover:text-ci-primary-1"
 										href="/"
 									>
-										App Development
+										Footer Link 3
 									</a>
 								</li>
-
 								<li>
 									<a
-										className="text-white transition hover:text-ci-primary-1"
+										className="text-white text-shadow transition  hover:text-ci-primary-1"
 										href="/"
 									>
-										Web Development
+										Footer Link 4
+									</a>
+								</li>
+							</ul>
+						</div>
+						<div>
+							<strong className="text-ci-primary-2 font-semibold lg:text-lg">Footer Nav 2</strong>
+							<ul className="space-y-1 mt-2">
+								<li>
+									<a
+										className="text-white text-shadow transition  hover:text-ci-primary-1"
+										href="/"
+									>
+										Footer Link 1
+									</a>
+								</li>
+								<li>
+									<a
+										className="text-white text-shadow transition  hover:text-ci-primary-1"
+										href="/"
+									>
+										Footer Link 2
+									</a>
+								</li>
+								<li>
+									<a
+										className="text-white text-shadow transition  hover:text-ci-primary-1"
+										href="/"
+									>
+										Footer Link 3
+									</a>
+								</li>
+								<li>
+									<a
+										className="text-white text-shadow transition  hover:text-ci-primary-1"
+										href="/"
+									>
+										Footer Link 4
 									</a>
 								</li>
 							</ul>
 						</div>
 
 						<div>
-							<strong className="text-ci-primary-3 font-medium lg:text-lg">About</strong>
-
-							<ul className="space-y-1">
+							<strong className="text-ci-primary-2 font-semibold lg:text-lg">Footer Nav 3</strong>
+							<ul className="space-y-1 mt-2">
 								<li>
 									<a
-										className="text-white transition hover:text-ci-primary-1"
+										className="text-white text-shadow transition  hover:text-ci-primary-1"
 										href="/"
 									>
-										
-										About
+										Footer Link 1
 									</a>
 								</li>
-
 								<li>
 									<a
-										className="text-white transition hover:text-ci-primary-1"
+										className="text-white text-shadow transition  hover:text-ci-primary-1"
 										href="/"
 									>
-										
-										Careers
+										Footer Link 2
 									</a>
 								</li>
-
 								<li>
 									<a
-										className="text-white transition hover:text-ci-primary-1"
+										className="text-white text-shadow transition  hover:text-ci-primary-1"
 										href="/"
 									>
-										
-										History
-									</a>
-								</li>
-
-								<li>
-									<a
-										className="text-white transition hover:text-ci-primary-1"
-										href="/"
-									>
-										
-										Our Team
-									</a>
-								</li>
-							</ul>
-						</div>
-
-						<div>
-							<strong className="text-ci-primary-3 font-medium lg:text-lg">Support</strong>
-
-							<ul className="space-y-1">
-								<li>
-									<a
-										className="text-white transition hover:text-ci-primary-1"
-										href="/"
-									>
-										
-										FAQs
-									</a>
-								</li>
-
-								<li>
-									<a
-										className="text-white transition hover:text-ci-primary-1"
-										href="/"
-									>
-										
-										Contact
-									</a>
-								</li>
-
-								<li>
-									<a
-										className="text-white transition hover:text-ci-primary-1"
-										href="/"
-									>
-										
-										Live Chat
+										Footer Link 3
 									</a>
 								</li>
 							</ul>
@@ -255,8 +224,8 @@ export function Footer() {
 					</div>
 				</div>
 
-				<div className="mt-16 border-t border- pt-8">
-					<p className="text-center text-ci-primary-3">
+				<div className="mt-16 border-t pt-8">
+					<p className="text-center text-white text-shadow">
 						&copy; {siteConfig.siteYear} {siteConfig.author}. All rights reserved.
 					</p>
 				</div>

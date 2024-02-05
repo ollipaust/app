@@ -8,7 +8,7 @@ import Layout from "./ui/template/layout.tsx";
 import MainBackground from "./ui/components/mainBackground.tsx";
 
 import tailwindStylesheet from "./ui/styles/tailwind.css";
-import globalStylesheet from './ui/styles/global.css'
+import globalStylesheet from "./ui/styles/global.css";
 
 // HTTP Headers
 export const headers = responseHeaders;
@@ -38,9 +38,11 @@ interface DocumentProps {
 
 // Document
 function Document({ children, isDev }: DocumentProps) {
-
 	return (
-		<html lang="de" className="relative">
+		<html
+			lang="de"
+			className="relative"
+		>
 			<head>
 				<meta charSet="utf-8" />
 				<meta
@@ -73,9 +75,12 @@ function Document({ children, isDev }: DocumentProps) {
 				/>
 				<Meta />
 				<Links />
-			</head> 
+			</head>
 			<body className="lg:py-16 bg-ci-primary-1">
-				<MainBackground id="splineBg" className="absolute bg-ci-primary-1 top-0 -z-10 w-full h-full blur-2xl" />
+				<MainBackground
+					id="splineBg"
+					className="fixed top-0 -z-10 w-full h-full bg-ci-primary-1 blur-2xl brightness-75 scale-110"
+				/>
 				<Layout>
 					{children}
 					<ScrollRestoration />

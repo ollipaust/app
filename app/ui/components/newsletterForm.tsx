@@ -19,7 +19,7 @@ function NewsletterForm({ headline }: { headline: string }) {
 						placeholder="john@doe.com"
 					/>
 
-					<button className="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-ci-accent-2 px-5 py-3 font-semibold text-white text-shadow-sm transition hover:bg-ci-accent-1">
+					<button className="absolute end-1 top-1/2 -translate-y-1/2 rounded-full bg-ci-accent-2 px-5 py-3 font-semibold text-white text-shadow-alt transition hover:bg-ci-accent-1">
 						Subscribe
 					</button>
 				</div>
