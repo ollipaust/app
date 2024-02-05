@@ -3,11 +3,11 @@ import NewsletterForm from "../components/newsletterForm.tsx";
 
 export function Footer() {
 	return (
-		<footer className="bg-ci-light-3/[.66] lg:rounded-b-2xl">
+		<footer id="Footer" className="bg-ci-light-3/[.66] lg:rounded-b-2xl">
 			<div className="container max-w-screen-xl mx-auto px-4 pb-8 pt-16 sm:px-6 lg:px-8">
 				<NewsletterForm headline="Lorem ipsum, dolor sit amet consectetur adipisicing elit?" />
-				<div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-32">
-					<div className="mx-auto max-w-sm lg:max-w-none">
+				<div id="FooterContent" className="grid lg:grid-cols-2 gap-4 mt-16">
+					<div id="FooterBranding" className="lg:max-w-md max-w-sm">
 						<img
 							src="/assets/company_logo.svg"
 							className="mx-auto lg:ml-0 lg:mr-auto drop-shadow"
@@ -17,7 +17,7 @@ export function Footer() {
 							Lorem ipsum, dolor sit amet consectetur adipisicing elit. Praesentium natus quod eveniet aut perferendis distinctio iusto repudiandae, provident velit
 							earum?
 						</p>
-						<div className="mt-6 flex justify-center gap-4 lg:justify-start">
+						<div id="SocialLinks" className="mt-6 flex justify-center gap-4 lg:justify-start">
 							<a
 								className="text-ci-primary-3 transition  hover:text-ci-primary-1 drop-shadow-sm"
 								href=""
@@ -116,114 +116,119 @@ export function Footer() {
 							</a>
 						</div>
 					</div>
-					<div className="grid grid-cols-1 gap-8 text-center lg:grid-cols-3 lg:text-left">
-						<div>
-							<strong className="text-ci-primary-2 font-semibold lg:text-lg">Footer Nav 1</strong>
-							<ul className="space-y-1 mt-2">
-								<li>
-									<a
-										className="text-white text-shadow transition  hover:text-ci-primary-1"
-										href="/"
-									>
-										Footer Link 1
-									</a>
-								</li>
-								<li>
-									<a
-										className="text-white text-shadow transition  hover:text-ci-primary-1"
-										href="/"
-									>
-										Footer Link 2
-									</a>
-								</li>
-								<li>
-									<a
-										className="text-white text-shadow transition  hover:text-ci-primary-1"
-										href="/"
-									>
-										Footer Link 3
-									</a>
-								</li>
-								<li>
-									<a
-										className="text-white text-shadow transition  hover:text-ci-primary-1"
-										href="/"
-									>
-										Footer Link 4
-									</a>
-								</li>
-							</ul>
+					<div id="FooterNavigation" className="flex flex-col flex-grow justify-between items-end">
+					<div id="FooterMenu" className="flex lg:flex-row flex-col gap-16">
+							<div>
+								<strong className="text-ci-primary-2 font-semibold lg:text-lg">Footer Nav 1</strong>
+								<ul className="space-y-1 mt-2">
+									<li>
+										<a
+											className="text-white text-shadow transition  hover:text-ci-primary-1"
+											href="/"
+										>
+											Footer Link 1
+										</a>
+									</li>
+									<li>
+										<a
+											className="text-white text-shadow transition  hover:text-ci-primary-1"
+											href="/"
+										>
+											Footer Link 2
+										</a>
+									</li>
+									<li>
+										<a
+											className="text-white text-shadow transition  hover:text-ci-primary-1"
+											href="/"
+										>
+											Footer Link 3
+										</a>
+									</li>
+									<li>
+										<a
+											className="text-white text-shadow transition  hover:text-ci-primary-1"
+											href="/"
+										>
+											Footer Link 4
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div>
+								<strong className="text-ci-primary-2 font-semibold lg:text-lg">Footer Nav 2</strong>
+								<ul className="space-y-1 mt-2">
+									<li>
+										<a
+											className="text-white text-shadow transition  hover:text-ci-primary-1"
+											href="/"
+										>
+											Footer Link 1
+										</a>
+									</li>
+									<li>
+										<a
+											className="text-white text-shadow transition  hover:text-ci-primary-1"
+											href="/"
+										>
+											Footer Link 2
+										</a>
+									</li>
+									<li>
+										<a
+											className="text-white text-shadow transition  hover:text-ci-primary-1"
+											href="/"
+										>
+											Footer Link 3
+										</a>
+									</li>
+									<li>
+										<a
+											className="text-white text-shadow transition  hover:text-ci-primary-1"
+											href="/"
+										>
+											Footer Link 4
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div>
+								<strong className="text-ci-primary-2 font-semibold lg:text-lg">Footer Nav 3</strong>
+								<ul className="space-y-1 mt-2">
+									<li>
+										<a
+											className="text-white text-shadow transition  hover:text-ci-primary-1"
+											href="/"
+										>
+											Footer Link 1
+										</a>
+									</li>
+									<li>
+										<a
+											className="text-white text-shadow transition  hover:text-ci-primary-1"
+											href="/"
+										>
+											Footer Link 2
+										</a>
+									</li>
+									<li>
+										<a
+											className="text-white text-shadow transition  hover:text-ci-primary-1"
+											href="/"
+										>
+											Footer Link 3
+										</a>
+									</li>
+								</ul>
+							</div>
 						</div>
-						<div>
-							<strong className="text-ci-primary-2 font-semibold lg:text-lg">Footer Nav 2</strong>
-							<ul className="space-y-1 mt-2">
-								<li>
-									<a
-										className="text-white text-shadow transition  hover:text-ci-primary-1"
-										href="/"
-									>
-										Footer Link 1
-									</a>
-								</li>
-								<li>
-									<a
-										className="text-white text-shadow transition  hover:text-ci-primary-1"
-										href="/"
-									>
-										Footer Link 2
-									</a>
-								</li>
-								<li>
-									<a
-										className="text-white text-shadow transition  hover:text-ci-primary-1"
-										href="/"
-									>
-										Footer Link 3
-									</a>
-								</li>
-								<li>
-									<a
-										className="text-white text-shadow transition  hover:text-ci-primary-1"
-										href="/"
-									>
-										Footer Link 4
-									</a>
-								</li>
-							</ul>
-						</div>
-
-						<div>
-							<strong className="text-ci-primary-2 font-semibold lg:text-lg">Footer Nav 3</strong>
-							<ul className="space-y-1 mt-2">
-								<li>
-									<a
-										className="text-white text-shadow transition  hover:text-ci-primary-1"
-										href="/"
-									>
-										Footer Link 1
-									</a>
-								</li>
-								<li>
-									<a
-										className="text-white text-shadow transition  hover:text-ci-primary-1"
-										href="/"
-									>
-										Footer Link 2
-									</a>
-								</li>
-								<li>
-									<a
-										className="text-white text-shadow transition  hover:text-ci-primary-1"
-										href="/"
-									>
-										Footer Link 3
-									</a>
-								</li>
-							</ul>
+						<div id="Corporate" className="flex flex-row justify-between items-end gap-4">
+							<a href="/" className="text-ci-primary-3 transition  hover:text-ci-primary-1">Impressum</a>
+							<a href="/" className="text-ci-primary-3 transition  hover:text-ci-primary-1">Datenschutz</a>
+							<a href="/" className="text-ci-primary-3 transition  hover:text-ci-primary-1">AGB</a>
 						</div>
 					</div>
 				</div>
-
 				<div className="mt-16 border-t pt-8">
 					<p className="text-center text-white text-shadow">
 						&copy; {siteConfig.siteYear} {siteConfig.author}. All rights reserved.

@@ -2,86 +2,153 @@ import { useState, useEffect } from "react";
 import siteConfig from "~/utils/siteConfig.tsx";
 
 function Header() {
+	const [isSticky, setIsSticky] = useState(false);
+	const [isDropdownVisible, setIsDropdownVisible] = useState(false);
 	const navLinksClasses = "text-white hover:text-ci-primary-1 transition font-semibold text-shadow lg:text-lg";
-	const [isSticky, setIsSticky] = useState<boolean | undefined>(undefined);
 
+	// Check and update isSticky state from localStorage only on client-side
 	useEffect(() => {
 		const stickyValue = localStorage.getItem("isNavSticky");
-		setIsSticky(stickyValue !== null ? JSON.parse(stickyValue) : true);
+		if (stickyValue) {
+			setIsSticky(JSON.parse(stickyValue));
+		}
 
 		const handleScroll = () => {
-			const shouldBeSticky = window.scrollY < 64;
+			const shouldBeSticky = window.scrollY > 85;
 			setIsSticky(shouldBeSticky);
+			localStorage.setItem("isNavSticky", JSON.stringify(shouldBeSticky));
 		};
 
 		window.addEventListener("scroll", handleScroll);
-		return () => window.removeEventListener("scroll", handleScroll);
+
+		return () => {
+			window.removeEventListener("scroll", handleScroll);
+		};
 	}, []);
-
-	useEffect(() => {
-		if (isSticky !== undefined) {
-			localStorage.setItem("isNavSticky", JSON.stringify(isSticky));
-		}
-	}, [isSticky]);
-
-	if (isSticky === undefined) return null;
 
 	return (
 		<>
 			<div
 				id="Header"
-				className={`sticky max-w-screen-2xl top-0 z-20 text-white px-8 py-4 ${isSticky ? "lg:rounded-t-xl bg-ci-light-3/[.66]" : "bg-ci-primary-2 shadow-md"}`}
+				className={`${isSticky ? "fixed top-0 left-1/2 -translate-x-1/2 z-50 bg-ci-primary-2 shadow-md w-full" : "relative bg-ci-light-3/[.66] lg:rounded-t-xl"} max-w-screen-2xl text-white lg:px-6 lg:py-4 px-4 py-2`}
 			>
-				<div className={`flex flex-row justify-between container max-w-screen-2xl mx-auto ${isSticky && 'pb-4 border-b'}`}>
+				<div className={`flex flex-row justify-between container max-w-screen-2xl mx-auto ${isSticky ? "border-b-0" : "border-b pb-2"}`}>
+					{/* Logo and site name */}
 					<a
 						href={siteConfig.homeUrl}
-						className="self-start text-black text-3xl font-bold"
+						className="self-start text-black hover:text-ci-primary-1 transition text-3xl font-bold my-auto"
 					>
 						<span className="relative">
-							{siteConfig.siteName.toUpperCase()}
+							{siteConfig.logo}
 							<img
 								className="absolute -top-[2px] -right-10 w-[35px] h-auto"
 								src="/assets/logo.png"
-								alt="ZEP GmbH Logo"
+								alt="Logo"
 							/>
 						</span>
 					</a>
-					<nav className="self-end">
-						<div>
-							<div className="flex space-x-6">
+					{/* Default Navigation */}
+					<nav className="hidden lg:flex space-x-6">
+						<a
+							href="#"
+							className={navLinksClasses}
+						>
+							Produkte
+						</a>
+						<a
+							href="#"
+							className={navLinksClasses}
+						>
+							Module
+						</a>
+						<a
+							href="#"
+							className={navLinksClasses}
+						>
+							Preise
+						</a>
+						<a
+							href="#"
+							className={navLinksClasses}
+						>
+							Wissen
+						</a>
+						<a
+							href="#"
+							className={navLinksClasses}
+						>
+							Über uns
+						</a>
+					</nav>
+					{/* Dropdown Button for Mobile and Tablets */}
+					<div className="self-end max-h-12 lg:hidden">
+						<button
+							className="text-white font-semibold rounded-lg hover:bg-opacity-75 focus:outline-none"
+							onClick={() => setIsDropdownVisible((prev) => !prev)}
+						>
+							<svg
+								width="48"
+								height="48"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
+								className="text-white my-auto"
+							>
+								<path
+									d="M5 7H19"
+									stroke="currentColor"
+									strokeWidth="2"
+									strokeLinecap="round"
+								/>
+								<path
+									d="M5 12H19"
+									stroke="currentColor"
+									strokeWidth="2"
+									strokeLinecap="round"
+								/>
+								<path
+									d="M5 17H19"
+									stroke="currentColor"
+									strokeWidth="2"
+									strokeLinecap="round"
+								/>
+							</svg>
+						</button>
+						{isDropdownVisible && (
+							<div className="absolute right-0 mt-2 py-2 w-48 bg-white rounded-lg shadow-xl">
 								<a
 									href="#"
-									className={navLinksClasses}
+									className={navLinksClasses + " block px-4 py-2"}
 								>
 									Produkte
 								</a>
 								<a
 									href="#"
-									className={navLinksClasses}
+									className={navLinksClasses + " block px-4 py-2"}
 								>
 									Module
 								</a>
 								<a
 									href="#"
-									className={navLinksClasses}
+									className={navLinksClasses + " block px-4 py-2"}
 								>
 									Preise
 								</a>
 								<a
 									href="#"
-									className={navLinksClasses}
+									className={navLinksClasses + " block px-4 py-2"}
 								>
 									Wissen
 								</a>
 								<a
 									href="#"
-									className={navLinksClasses}
+									className={navLinksClasses + " block px-4 py-2"}
 								>
 									Über uns
 								</a>
 							</div>
-						</div>
-					</nav>
+						)}
+					</div>
 				</div>
 			</div>
 		</>
