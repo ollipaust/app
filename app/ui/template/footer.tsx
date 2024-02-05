@@ -19,7 +19,7 @@ export function Footer() {
 						</p>
 						<div className="mt-6 flex justify-center gap-4 lg:justify-start">
 							<a
-								className="text-ci-primary-3 transition  hover:text-ci-primary-1"
+								className="text-ci-primary-3 transition  hover:text-ci-primary-1 drop-shadow-sm"
 								href=""
 								target="_blank"
 								rel="noreferrer"
@@ -39,7 +39,7 @@ export function Footer() {
 								</svg>
 							</a>
 							<a
-								className="text-ci-primary-3 transition  hover:text-ci-primary-1"
+								className="text-ci-primary-3 transition  hover:text-ci-primary-1 drop-shadow-sm"
 								href=""
 								target="_blank"
 								rel="noreferrer"
@@ -59,7 +59,7 @@ export function Footer() {
 								</svg>
 							</a>
 							<a
-								className="text-ci-primary-3 transition  hover:text-ci-primary-1"
+								className="text-ci-primary-3 transition  hover:text-ci-primary-1 drop-shadow-sm"
 								href=""
 								target="_blank"
 								rel="noreferrer"
@@ -75,7 +75,7 @@ export function Footer() {
 								</svg>
 							</a>
 							<a
-								className="text-ci-primary-3 transition  hover:text-ci-primary-1"
+								className="text-ci-primary-3 transition  hover:text-ci-primary-1 drop-shadow-sm"
 								href=""
 								target="_blank"
 								rel="noreferrer"
@@ -95,7 +95,7 @@ export function Footer() {
 								</svg>
 							</a>
 							<a
-								className="text-ci-primary-3 transition  hover:text-ci-primary-1"
+								className="text-ci-primary-3 transition  hover:text-ci-primary-1 drop-shadow-sm"
 								href=""
 								target="_blank"
 								rel="noreferrer"
