@@ -14,7 +14,7 @@ export default function Index() {
 				className="relative border-b pb-4"
 			>
 				<div className="container max-w-screen-xl">
-					<p className="mb-1 text-xs uppercase leading-6 font-semibold text-ci-primary-2">Frontend UI & Engineering by Olli Paust</p>
+					<p className="mb-1 text-xs uppercase leading-6 font-semibold text-ci-primary-2">Zeit Erfassungs App</p>
 					<div className="flex items-center">
 						<h1 className="inline-block text-5xl font-extrabold text-ci-secondary-2">ZEA Time Tracker</h1>
 					</div>

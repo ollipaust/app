@@ -81,7 +81,6 @@ export default function TimeTrackingProvider({ children }: { children: ReactNode
 		setIsTracking(true);
 	};
 
-	// Stop the current tracking session
 	const stopTracking = () => {
 		const endTime = new Date();
 		let elapsedTime = (endTime.getTime() - (currentSession.startTime?.getTime() || endTime.getTime())) / 1000;

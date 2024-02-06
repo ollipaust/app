@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useTimeTracking } from "~/utils/timeTrackingProvider.tsx";
 import { formatDate, formatElapsedTime, formatTime } from "~/utils/formatters.ts";
 
+// TODO - Description
 export default function SessionsTable() {
 	const { trackingSessions, stopTrackingSession } = useTimeTracking();
 	const [descriptions, setDescriptions] = useState<{ [sessionId: string]: string }>({});
