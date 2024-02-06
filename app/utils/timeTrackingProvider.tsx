@@ -46,13 +46,20 @@ export default function TimeTrackingProvider({ children }: { children: ReactNode
 	const [trackingSessions, setTrackingSessions] = useState<TrackingSession[]>([]);
 	const [isTracking, setIsTracking] = useState<boolean>(false);
 
-	useEffect(() => {
-		// Load sessions from localStorage on initial load
-		const loadedSessions = localStorage.getItem("trackingSessions");
-		if (loadedSessions) {
-			setTrackingSessions(JSON.parse(loadedSessions));
-		}
-	}, []);
+    useEffect(() => {
+        // Load sessions from localStorage on initial load
+        const loadedSessions = localStorage.getItem("trackingSessions");
+        if (loadedSessions) {
+            const parsedSessions: TrackingSession[] = JSON.parse(loadedSessions).map((session: any) => {
+                return {
+                    ...session,
+                    startTime: session.startTime ? new Date(session.startTime) : null,
+                    endTime: session.endTime ? new Date(session.endTime) : null,
+                };
+            });
+            setTrackingSessions(parsedSessions);
+        }
+    }, []);
 
 	useEffect(() => {
 		// Save sessions to localStorage whenever trackingSessions changes
