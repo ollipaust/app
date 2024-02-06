@@ -250,16 +250,17 @@ export function Footer() {
 							id="Corporate"
 							className="flex flex-row justify-between items-end gap-4"
 						>
-						      {corporateLinks.map((link, index) => (
-        <React.Fragment key={index}>
-          <a href={link.href} className="text-ci-secondary-2 transition hover:text-ci-primary-1 text-shadow">
-            {link.title}
-          </a>
-          {(index === 0 || index === 1) && (
-            <span className="text-ci-secondary-2 my-auto leading-[0] text-2xl">•</span>
-          )}
-        </React.Fragment>
-      ))}
+							{corporateLinks.map((link, index) => (
+								<React.Fragment key={index}>
+									<a
+										href={link.href}
+										className="text-ci-secondary-2 transition hover:text-ci-primary-1 text-shadow"
+									>
+										{link.title}
+									</a>
+									{(index === 0 || index === 1) && <span className="text-ci-secondary-2 my-auto leading-[0] text-2xl">•</span>}
+								</React.Fragment>
+							))}
 						</div>
 					</div>
 				</div>
