@@ -1,7 +1,6 @@
-// app/routes/index.tsx
 import type { MetaFunction } from "@remix-run/node";
-import siteConfig from "~/utils/siteConfig.tsx"; // Adjusted for the correct path
-import TimerTracker from '~/ui/components/timeTracker.tsx'; // Import the new component
+import siteConfig from "~/utils/siteConfig.tsx"; 
+import TimerTracker from '~/ui/components/timeTracker.tsx'; 
 
 export const meta: MetaFunction = () => {
 	return [

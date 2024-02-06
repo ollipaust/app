@@ -7,7 +7,6 @@ function Header() {
 	const navLinksClasses = "text-white hover:text-ci-primary-1 transition font-semibold text-shadow lg:text-lg";
 	const dropDownNavLinksClasses = "text-ci-secondary-1 hover:text-ci-primary-1 transition font-semibold text-shadow lg:text-lg block px-4 py-2 text-center";
 
-	// Check and update isSticky state from localStorage only on client-side
 	useEffect(() => {
 		const stickyValue = localStorage.getItem("isNavSticky");
 		if (stickyValue) {

@@ -1,4 +1,3 @@
-// app/components/SessionsTable.tsx
 import React, { useState, useEffect } from 'react';
 import { useTimeTracking } from '~/utils/timeTrackingProvider.tsx';
 import { formatDate, formatElapsedTime, formatTime } from '~/utils/formatters.ts';
@@ -8,9 +7,8 @@ export default function SessionsTable() {
     const [descriptions, setDescriptions] = useState<{ [sessionId: string]: string }>({});
 
     useEffect(() => {
-        // Initialize descriptions state with existing session IDs
         const initialDescriptions = trackingSessions.reduce((acc, session) => {
-            acc[session.id] = ''; // Initialize with an empty string or fetch existing descriptions if available
+            acc[session.id] = ''; 
             return acc;
         }, {} as { [sessionId: string]: string });
         setDescriptions(initialDescriptions);
@@ -25,7 +23,6 @@ export default function SessionsTable() {
 
     const handleDeleteSession = (sessionId: string) => {
         stopTrackingSession(sessionId);
-        // Optionally remove the description from state if not needed anymore
         const updatedDescriptions = { ...descriptions };
         delete updatedDescriptions[sessionId];
         setDescriptions(updatedDescriptions);

@@ -27,7 +27,6 @@ export function formatDate(date: Date | null): string {
     return `${dateString} – ${timeString}`;
   }
   
-// Utility function to format seconds into hh:mm:ss
 export function formatElapsedTime(seconds: number): string {
     const hours = Math.floor(seconds / 3600).toString().padStart(2, '0');
     const minutes = Math.floor((seconds % 3600) / 60).toString().padStart(2, '0');

@@ -1,7 +1,6 @@
-// app/components/TimeTracker.tsx
 import React from 'react';
-import { useTimeTracking } from '~/utils/timeTrackingProvider.tsx'; // Adjust the import path as needed
-import SessionsTable from './sessionsTable.tsx'; // Import the component for displaying sessions
+import { useTimeTracking } from '~/utils/timeTrackingProvider.tsx'; 
+import SessionsTable from './sessionsTable.tsx';
 
 export default function TimeTracker() {
   const { startTracking, stopTracking, isTracking } = useTimeTracking();
@@ -16,7 +15,7 @@ export default function TimeTracker() {
           Stop
         </button>
       </div>
-      <SessionsTable /> {/* Display the sessions table */}
+      <SessionsTable />
     </div>
   );
 }

@@ -16,7 +16,7 @@ interface TimeTrackingState {
   startTracking: () => void;
   stopTracking: () => void;
   setIsTracking: (isTracking: boolean) => void;
-  stopTrackingSession: (sessionId: string) => void; // Add this line
+  stopTrackingSession: (sessionId: string) => void;
 }
 
 const defaultSession: TrackingSession = {
@@ -24,7 +24,7 @@ const defaultSession: TrackingSession = {
   startTime: null,
   endTime: null,
   elapsedTime: 0,
-  description: '', // Default description as an empty string
+  description: '',
 };
 
 const defaultState: TimeTrackingState = {
@@ -99,7 +99,6 @@ export default function TimeTrackingProvider({ children }: { children: ReactNode
     setTrackingSessions(prevSessions => [...prevSessions, updatedSession]);
     setIsTracking(false);
   
-    // Save to localStorage or handle as needed
   };
 
   const updateSessionDescription = (sessionId: string, description: string) => {
@@ -108,14 +107,13 @@ export default function TimeTrackingProvider({ children }: { children: ReactNode
       if (index !== -1) {
         const updatedSessions = [...currentSessions];
         updatedSessions[index] = {...updatedSessions[index], description};
-        localStorage.setItem('trackingSessions', JSON.stringify(updatedSessions)); // Save updated sessions to localStorage
+        localStorage.setItem('trackingSessions', JSON.stringify(updatedSessions));
         return updatedSessions;
       }
       return currentSessions;
     });
   };
 
-  // Context value includes the ability to start/stop tracking, current session info, and all sessions
   const value = {
     currentSession,
     trackingSessions,
